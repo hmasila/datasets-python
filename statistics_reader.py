@@ -27,3 +27,24 @@ def formatted_statistics(stats, required_stats_column_name, required_stats_colum
             required_stats_column_name,
             row[required_stats_column]))
     return "{}\n{}\n{}".format("-"*30, "\n".join(result), "-"*30)
+
+def read_menu_options(file):
+    options_file = open(file, "r")
+    menu_option_array = []
+
+    for line in options_file:
+        menu_option_array.append(line.replace("\n", ""))
+
+    return menu_option_array
+
+def menu_options_dict():
+    options = dict();
+
+    options["main"] = read_menu_options("data_files/Build-Main.txt")
+    options["qb"] = read_menu_options("data_files/Option01Menu.txt")
+    options["rb"] = read_menu_options("data_files/Option02Menu.txt")
+    options["recv"] = read_menu_options("data_files/Option03Menu.txt")
+    options["tackles_sacks"] = read_menu_options("data_files/Option04Menu.txt")
+    options["interceptions"] = read_menu_options("data_files/Option05Menu.txt")
+
+    return options

@@ -1,7 +1,9 @@
 from main_menu import MainMenu
+from statistics_reader import menu_options_dict
 class App:
     def __init__(self):
-        self.menu = MainMenu("Main MENU", ["Quarterbacks", "Running backs", "Receivers", "Tackles", "Interceptions"])
+        menu_options = menu_options_dict()
+        self.menu = MainMenu(menu_options["main"][0], menu_options["main"][2:])
 
     def run(self):
         self.menu.prompt();

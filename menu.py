@@ -4,7 +4,6 @@ class Menu:
         self.name = name
         self.options = options
         self.parent_menu = parent_menu
-        self.add_navigation_option()
 
     def prompt(self):
         """Display the menu and prompt user for input"""
@@ -14,7 +13,6 @@ class Menu:
         for index, option in enumerate(self.options):
             print(self.option_text(index, option))
         print("-" * 30)
-        print(self.option_text(len(self.options), self.navigation_option))
         self.process_menu_selections()
 
     def process_menu_selections(self):
@@ -38,11 +36,7 @@ class Menu:
             selected_option = int(selected_option)
         except ValueError:
             return False
-        return True if 0 < selected_option <= (len(self.options) + 1) else False
-
-    def add_navigation_option(self):
-        """Add the navigation option: either 'back' or 'exit' depending on the menu type"""
-        self.navigation_option = "Back" if self.parent_menu else "Exit"
+        return True if 0 < selected_option <= (len(self.options)) else False
 
     def clear_screen(self):
         # select clear command depending on local OS.

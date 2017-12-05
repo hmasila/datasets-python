@@ -1,0 +1,8 @@
+	MAIN MENU
+-------------------------------
+Quarterbacks
+Running backs
+Receivers
+Tackles
+Interceptions
+Quit
